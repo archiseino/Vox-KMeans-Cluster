@@ -16,6 +16,8 @@
 \subsection{Kesimpulan}
 Dari ketiga visualisasi yang dilakukan, baik dalam bentuk pair plot, 3D scatter plot, dan PCA 2D plot, dapat disimpulkan bahwa data yang dianalisis menunjukkan pola yang cukup homogen dengan variasi yang terbatas di beberapa atribut. Pada pair plot (visualisasi pertama), terlihat bahwa beberapa atribut seperti \textit{Voter ratio} dan \textit{voter gender ratio} memiliki distribusi yang sangat rapat dan tumpang tindih antar cluster, yang mengindikasikan sulitnya pemisahan yang jelas antar cluster dalam dimensi-dimensi tersebut. Pada 3D scatter plot (visualisasi kedua), meskipun terdapat sedikit pemisahan antar cluster, terutama pada atribut \textit{growth population} dan \textit{population density}, overlap antar cluster masih terlihat, terutama antara Cluster 0 (ungu) dan Cluster 1 (kuning). Ini menunjukkan bahwa atribut-atribut yang digunakan tidak memberikan pemisahan yang sangat kuat dalam ruang dimensi tinggi. Dalam PCA 2D plot (visualisasi ketiga), terlihat bahwa sebagian besar variabilitas dalam data ditangkap oleh Principal Component 1, sementara Principal Component 2 hanya menangkap sedikit variansi. Hal ini mengindikasikan bahwa sebagian besar atribut tidak memberikan cukup variasi untuk memisahkan cluster dengan tegas, dengan sebagian data cenderung tersebar di satu area tertentu.
 
+Hasil dari nilai \textit{Silhouette Score} juga menunjukan nilai 0.56, menandakan cluster tersebut dalam kondisi yang baik, meskipun terdapat beberapa titik overlap pada pada ketiga visualisasi. 
+
 \subsection{Saran}
 Berdasarkan penelitian yang sudah dilaksanakan, terdapat beberapa saran untuk dapat memaksimalkan klustering rekapitulasi daftar pemilih Pilkada 2024, diantaranya:
 \begin{itemize}
