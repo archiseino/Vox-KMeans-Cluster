@@ -1,0 +1,46 @@
+% Main Section: BAB I (unnumbered)
+\section*{\centering BAB I \\ Pendahuluan}
+\addcontentsline{toc}{section}{BAB I Pendahuluan}  % Manually add unnumbered section to ToC
+
+% Set the section counter manually to "1" for subsections under BAB I
+\setcounter{section}{1}
+
+\subsection{Latar Belakang}
+Demokrasi memberi rakyat hak untuk memilih pemimpin, sebagaimana tercantum dalam UUD 1945 Pasal 1 Ayat 2, bahwa "Kedaulatan berada di tangan rakyat dan dilaksanakan sepenuhnya oleh Majelis Permusyawaratan Rakyat" \cite{PasalDemokrasi}. Pilkada atau Pemilihan Kepala Daerah di Indonesia merupakan momen penting dalam proses demokrasi, di mana pemimpin di tingkat lokal, seperti gubernur, bupati, dan walikota, dipilih secara langsung oleh masyarakat. Untuk menjamin keberlangsungan pemilihan yang demokratis dan adil, Daftar Pemilih Tetap (DPT) disusun sebagai instrumen resmi yang mencatat warga negara yang memenuhi syarat untuk memberikan suara. Validitas data pemilih memainkan peran penting dalam menghindari permasalahan seperti pemilih ganda atau pemilih tidak sah, yang bisa mengganggu kredibilitas hasil pilkada \cite{InstrumenDpt}.
+
+Pengelompokan pemilih berdasarkan karakteristik demografis dapat memberikan wawasan lebih dalam bagi penyelenggara pilkada dan kandidat mengenai perilaku pemilih, distribusi geografis, serta potensi keterlibatan politik di setiap daerah. Misalnya, analisis terhadap distribusi usia, jenis kelamin, dan pertumbuhan populasi di suatu wilayah bisa membantu memahami pola partisipasi politik serta area di mana kampanye politik dapat difokuskan \cite{ImplementasiDataPemilihBerkelanjutan}.
+
+Namun, tantangan utama dalam menganalisis data pemilih adalah kompleksitas serta volume data yang besar. Oleh karena itu, data mining dan metode analisis data, seperti klasterisasi, memainkan peran penting dalam menganalisis data pemilih dengan lebih efektif.
+
+Di sinilah peran klasterisasi dalam data mining sangat berguna. Klasterisasi adalah teknik yang bertujuan untuk mengelompokkan data ke dalam beberapa kelompok yang memiliki kesamaan karakteristik. Beberapa metode populer yang digunakan untuk klasterisasi adalah K-Means. Teknik ini telah digunakan dalam berbagai bidang untuk menemukan pola tersembunyi di dalam data besar. Dalam konteks Pilkada, klasterisasi dapat digunakan untuk mengelompokkan wilayah-wilayah berdasarkan data pemilih dan populasi sehingga dapat diidentifikasi area yang membutuhkan perhatian lebih dalam penyuluhan atau penanganan pemilih \cite{DataMiningTechniques}.
+
+Penggunaan metode K-Means, misalnya, memungkinkan untuk membagi data menjadi beberapa klaster berdasarkan atribut seperti Rasio Pemilih Laki-laki dan Perempuan, Rasio Pemilih terhadap Total Populasi, serta Tingkat Pertumbuhan Populasi. Metode ini banyak digunakan karena kemampuannya dalam menangani data dengan ukuran yang relatif besar serta dalam mengidentifikasi pola demografis yang signifikan \cite{ClusteringMethod}.
+
+Dalam konteks Pilkada, analisis klasterisasi yang efektif terhadap data DPT dapat memberikan beberapa manfaat strategis. Dengan mengelompokkan wilayah pemilih berdasarkan pertumbuhan populasi atau kepadatan populasi, pihak penyelenggara dapat memprioritaskan area dengan jumlah pemilih yang tinggi dan sumber daya yang terbatas. Selain itu, analisis ini juga dapat membantu dalam meningkatkan partisipasi politik, dengan mengidentifikasi wilayah di mana sosialisasi pilkada perlu diperkuat, terutama di area dengan rasio pemilih yang rendah dibandingkan jumlah populasi \cite{ElectionParticipation}.
+
+Melalui penelitian ini, metode klasterisasi diterapkan pada data pemilih di beberapa kecamatan dengan tujuan untuk mengevaluasi bagaimana data ini dapat diolah secara lebih efektif. Analisis yang dilakukan diharapkan mampu mengungkap pola-pola penting yang dapat berkontribusi dalam perencanaan logistik pilkada serta dalam memahami karakteristik demografis pemilih di berbagai wilayah.
+
+\subsection{Rumusan Masalah}
+Adapun rumusan masalah dilakukan penelitian ini adalah bagaimana penerapan metode clustering (K-Means) pada data pemilih dan menghasilkan visualisasi clustering yang lebih representatif?
+
+\subsection{Tujuan Penelitian}
+Adapun tujuan penelitian ini adalah untuk melakukan methode clustering pada data pemilih dan memberikan visualisasi yang jelas dan informatif berdasarkan hasil clustering.
+
+\subsection{Manfaat Penelitian}
+Penelitian ini diharapkan dapat memberikan wawasan tentang penggunaan metode clustering K-Means yang efektif untuk menganalisis data pemilih, membantu dalam pengelompokan wilayah berdasarkan karakteristik pemilih, dan mendukung pengambilan keputusan terkait analisis populasi pemilih.
+
+\subsection{Ruang Lingkup}
+Dalam penelitian ini, penulis mengambil objek penelitian dari KPU Provinsi Lampung, dimana ruang lingkup penelitian hanya mencakup kegiatan analisis rekapitulasi data pemilih beserta data umum yang di dapat dari Badan Pusat Statistik (BPS). Penulis mendapat kesempatan untuk membuat sebuah klustering data tersebut dan membuat visualisasi informatif berdasarkan hasil klustering.
+
+\subsection{Sistematika Penulisan}
+Laporan Kerja Praktik ini disusun dari beberapa Bagian (Bab):
+\begin{itemize}
+    \item \textbf{Bab I}: Pendahuluan, membahas latar belakang, rumusan masalah, tujuan, manfaat, ruang lingkup, dan sistematika penulisan.
+    \item \textbf{Bab II}: Gambaran umum nstansi, yang menjelaskan profil dan struktur organisasi KPU Provinsi Lampung.
+    \item \textbf{Bab III}: Landasan teori, berisi mengenai topik seputar data pemilih dan data BPS, serta metode \textit{Machine Learning} yang berhubungan dengan metode yang digunakan.
+    \item \textbf{Bab IV}: Metode penelitian, berisi tentang segala metode yang diterapkan pada penelitian ini serta analisis data yang digunakan.
+    \item \textbf{Bab V}: Hasil implementasi, berisi tentang penjabaran hasil dan visualisasi rekapitulasi daftar pemilih.
+    \item \textbf{Bab VI}: Kesimuplan dan saran, berisi tentang kesimpulan yang didapat dari Hasil dan Implementasi yang telah dilakukan serta Saran yang diberikan penulis untuk pengembangan terhadap penelitian selanjutnya.
+\end{itemize}
+
+\newpage

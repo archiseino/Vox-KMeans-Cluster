@@ -1,0 +1,26 @@
+\newpage
+\section*{\centering BAB VI \\ Kesimpulan dan Saran }
+
+\addcontentsline{toc}{section}{BAB VI Kesimpulan dan Saran}  % Manually add unnumbered section to ToC
+
+% Set the section counter manually to "1" for subsections under BAB IV
+\setcounter{section}{6}
+\setcounter{subsection}{0}  % Reset subsection
+\setcounter{figure}{0}
+\setcounter{table}{0}
+\setcounter{lstlisting}{0}
+\renewcommand{\thetable}{\thesection.\arabic{table}}
+\renewcommand{\thefigure}{\thesection.\arabic{figure}}
+\renewcommand{\thelstlisting}{\thesection.\arabic{lstlisting}}
+
+\subsection{Kesimpulan}
+Dari ketiga visualisasi yang dilakukan, baik dalam bentuk pair plot, 3D scatter plot, dan PCA 2D plot, dapat disimpulkan bahwa data yang dianalisis menunjukkan pola yang cukup homogen dengan variasi yang terbatas di beberapa atribut. Pada pair plot (visualisasi pertama), terlihat bahwa beberapa atribut seperti \textit{Voter ratio} dan \textit{voter gender ratio} memiliki distribusi yang sangat rapat dan tumpang tindih antar cluster, yang mengindikasikan sulitnya pemisahan yang jelas antar cluster dalam dimensi-dimensi tersebut. Pada 3D scatter plot (visualisasi kedua), meskipun terdapat sedikit pemisahan antar cluster, terutama pada atribut \textit{growth population} dan \textit{population density}, overlap antar cluster masih terlihat, terutama antara Cluster 0 (ungu) dan Cluster 1 (kuning). Ini menunjukkan bahwa atribut-atribut yang digunakan tidak memberikan pemisahan yang sangat kuat dalam ruang dimensi tinggi. Dalam PCA 2D plot (visualisasi ketiga), terlihat bahwa sebagian besar variabilitas dalam data ditangkap oleh Principal Component 1, sementara Principal Component 2 hanya menangkap sedikit variansi. Hal ini mengindikasikan bahwa sebagian besar atribut tidak memberikan cukup variasi untuk memisahkan cluster dengan tegas, dengan sebagian data cenderung tersebar di satu area tertentu.
+
+\subsection{Saran}
+Berdasarkan penelitian yang sudah dilaksanakan, terdapat beberapa saran untuk dapat memaksimalkan klustering rekapitulasi daftar pemilih Pilkada 2024, diantaranya:
+\begin{itemize}
+    \item Penambahan Atribut: Disarankan untuk menambahkan atribut lain yang lebih variatif, terutama yang dapat menangkap aspek yang mungkin lebih spesifik terhadap perbedaan antar wilayah atau sub-kelompok dalam data. Atribut seperti pendapatan per kapita atau tingkat pendidikan mungkin dapat memberikan dimensi baru yang memperjelas perbedaan antar cluster.
+    \item Eksplorasi Metode Clustering Lain: Metode clustering seperti DBSCAN atau Hierarchical Clustering dapat dieksplorasi untuk melihat apakah metode ini lebih efektif dalam mendeteksi struktur atau pola dalam data yang tidak dapat ditangkap dengan baik oleh K-Means, terutama jika terdapat outlier atau distribusi yang tidak seragam.
+    \item Evaluasi Outlier: Penting untuk melakukan evaluasi lebih mendalam terhadap outlier yang ada. Outlier tersebut mungkin memberikan informasi penting atau justru mengganggu proses clustering. Penghapusan atau penanganan outlier dengan lebih baik bisa meningkatkan hasil analisis.
+    \item Pengurangan Dimensi Lanjutan: Selain PCA, metode pengurangan dimensi lain seperti t-SNE atau UMAP dapat dicoba untuk mendapatkan visualisasi yang lebih baik dan memperlihatkan pola yang mungkin tidak terdeteksi pada PCA 2D.
+\end{itemize}

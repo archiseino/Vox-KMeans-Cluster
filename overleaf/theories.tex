@@ -1,0 +1,52 @@
+\section*{\centering BAB III \\ Landasan Teori}
+
+\addcontentsline{toc}{section}{BAB III Landasan Teori}  % Manually add unnumbered section to ToC
+
+% Set the section counter manually to "1" for subsections under BAB I
+\setcounter{section}{3}
+\setcounter{subsection}{0}  % Reset subsection
+\setcounter{figure}{0}
+\renewcommand{\thefigure}{\thesection.\arabic{figure}}
+
+\subsection{Data Clustering}
+Clustering adalah teknik dalam data mining yang bertujuan untuk mengelompokkan data menjadi beberapa kelompok atau cluster berdasarkan kemiripan tertentu. Data yang berada dalam satu kluster memiliki kemiripan yang lebih tinggi satu sama lain dibandingkan dengan data di cluster lainnya \cite{DataClusteringAKJein}. Dalam clustering, jarak / kemiripan antar data dapat diukur dalam berbagai metode, salah satunya adalah jarak Euclidian.
+
+Jarak Euclidean antara dua titik dalam ruang n-dimensi ($x_i$ dan $x_j$) dihitung dengan formula
+\[
+d(x_i, x_j) = \sqrt{\sum_{k=1}^{n} (x_{ik} - x_{jk})^2}
+\]
+di mana $x_{ik}$ dan $x_{jk}$ adalah nilai pada dimensi k untuk masing-masing data $x_i$ dan $x_j$
+ 
+\subsection{K-Means Clustering}
+K-Means adalah algoritma clustering yang paling populer dan digunakan secara luas. Algoritma ini membagi data ke dalam k kelompok berdasarkan jarak dari titik pusat (centroid). Proses ini berulang kali dilakukan hingga posisi centroid tidak berubah signifikan atau hingga iterasi maksimum tercapai. Kelebihan K-Means adalah kesederhanaannya dan efisiensi komputasinya, terutama untuk dataset berukuran besar \cite{KMeansDef}. 
+
+Proses ini diulang hingga tidak ada perubahan signifikan pada posisi centroid atau hingga iterasi maksimum tercapai. Proses iterasi ini mengoptimalkan fungsi total sum of squared distances antara data dan centroid-nya:
+\[
+J = \sum_{i=1}^k \sum_{x\in C_i} |x - \mu_i|^2
+\]
+Dimana $C_i$ adalah kluster ke-i dan $\mu_i$ adalah centroid dari cluster tersebut.
+
+\subsection{Elbow Method}
+Pemilihan jumlah cluster \textit{k} yang optimal dalam K-Means adalah masalah yang penting. Metode Elbow adalah salah satu pendekatan yang sering digunakan untuk menentukan jumlah cluster optimal \cite{ElbowMethod}. Dalam metode ini, grafik Within-Cluster Sum of Squares (WCSS) diplot untuk beberapa nilai 
+k, dan jumlah cluster optimal adalah titik di mana WCSS mulai mengalami penurunan yang tidak signifikan, membentuk "titik siku" (elbow):
+\[
+\text{WCSS} = \sum_{i=1}^k \sum_{x\in C_i} |x - \mu_i|^2
+\]
+
+Metode lain seperti Silhouette Score mengukur seberapa baik data dikelompokkan dengan membandingkan jarak intra-cluster (di dalam cluster) dan inter-cluster (antara cluster). Nilai positif mendekati 1 menunjukkan clustering yang baik.
+
+\subsection{Data Normalization}
+Sebelum melakukan clustering, terutama untuk algoritma seperti K-Means, normalisasi data seringkali diperlukan. Algoritma K-Means sensitif terhadap skala antar fitur, sehingga fitur dengan rentang nilai yang lebih besar dapat mendominasi hasil clustering \cite{ComparationMinMaxZScore}. Salah satu metode normalisasi yang sering digunakan adalah Min-Max Scaling:
+\[
+X_{\text{scaled}} = \frac{X - X_{\text{min}}}{X_{\text{max}} - X_{\text{min}}}
+\]
+Metode lain adalah Z-Score Normalization yang menstandarkan data berdasarkan mean dan standar deviasi:
+\[
+Z = \frac{X - \mu}{\omega}
+\]
+
+\subsection{Principal Component Analysis (PCA)}
+Pada dataset dengan dimensi yang tinggi, visualisasi dapat menjadi sulit. Oleh karena itu, teknik reduksi dimensi seperti Principal Component Analysis (PCA) sering digunakan. PCA mengubah dataset ke dalam sejumlah komponen utama yang mempertahankan variasi data. Ini memungkinkan kita untuk memvisualisasikan data dalam 2D atau 3D sambil tetap mempertahankan informasi penting dari dimensi yang lebih tinggi \cite{PCAComponent}.
+
+\newpage
+
