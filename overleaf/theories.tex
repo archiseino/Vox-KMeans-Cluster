@@ -8,45 +8,101 @@
 \setcounter{figure}{0}
 \renewcommand{\thefigure}{\thesection.\arabic{figure}}
 
+\subsection{Data Mining}
+Data mining merujuk pada proses mengekstraksi informasi berharga dari kumpulan data besar yang seringkali tidak terstruktur untuk mengungkap pola tersembunyi yang dapat mendukung proses pengambilan keputusan. Tujuan dari  data mining adalah mengubah data mentah menjadi wawasan berharga yang dapat digunakan untuk analisis lebih lanjut, perencanaan strategis, dan peramalan. Proses ini melibatkan beberapa tahap, termasuk pembersihan data, integrasi data, transformasi data, penemuan pola, dan evaluasi \cite{DataMiningTechniques}.
+Dalam data mining, terdapat beberapa metode untuk mengekstraksi informasi dan pola dari data. Beberapa teknik utama dalam data mining meliputi:
+\begin{enumerate}
+    \item \textbf{Klasifikasi}: Teknik ini mengkategorikan data ke dalam kelompok yang telah ditentukan sebelumnya. \textit{Supervised learning}, seperti \textit{decision tree}, \textit{support vector machine}, dan \textit{neural network}, biasanya digunakan untuk klasifikasi. Metode ini banyak diterapkan dalam deteksi penipuan, filter spam, dan prediksi penyakit.
+    \item \textbf{Klastering}: Berbeda dengan klasifikasi, klastering adalah teknik pembelajaran tanpa pengawasan yang mengelompokkan data menjadi klaster objek serupa. Klastering sangat berguna dalam segmentasi pasar, deteksi anomali, dan segmentasi citra. Algoritma klastering yang umum digunakan antara lain K-means, DBSCAN, dan hierarchical clustering.
+    \item \textbf{Regresi}: Analisis regresi digunakan untuk memodelkan hubungan antara variabel, biasanya untuk prediksi dan peramalan. Regresi linear, regresi logistik, dan model yang lebih kompleks seperti decision tree dan random forest sering digunakan dalam tugas data mining prediktif.
+\end{enumerate}
+ 
 \subsection{Data Clustering}
-Clustering adalah teknik dalam data mining yang bertujuan untuk mengelompokkan data menjadi beberapa kelompok atau cluster berdasarkan kemiripan tertentu. Data yang berada dalam satu kluster memiliki kemiripan yang lebih tinggi satu sama lain dibandingkan dengan data di cluster lainnya \cite{DataClusteringAKJein}. Dalam clustering, jarak / kemiripan antar data dapat diukur dalam berbagai metode, salah satunya adalah jarak Euclidian.
 
-Jarak Euclidean antara dua titik dalam ruang n-dimensi ($x_i$ dan $x_j$) dihitung dengan formula
+Clustering adalah teknik dalam data mining yang bertujuan untuk mengelompokkan data menjadi beberapa kelompok atau kluster berdasarkan kemiripan tertentu. Data yang berada dalam satu kluster memiliki kemiripan yang lebih tinggi satu sama lain dibandingkan dengan data di kluster lainnya \cite{DataClusteringAKJein}. Teknik ini sangat penting dalam eksplorasi data, terutama dalam aplikasi seperti segmentasi pasar, deteksi anomali, pengelompokan dokumen, dan analisis pola \cite{OyewoleClusteringApplication}.
+
+\subsubsection{K-Means Clustering}
+K-Means adalah algoritma clustering yang membagi data menjadi $k$ kelompok berdasarkan jarak terdekat antara titik data dan pusat kluster (centroid). Prosesnya melibatkan inisialisasi centroid, penghitungan jarak setiap data terhadap centroid, dan pembaruan posisi centroid sampai konvergen. K-Means sering digunakan karena kesederhanaan dan efisiensinya dalam memproses data besar. Namun, algoritma ini memiliki keterbatasan, seperti sensitivitas terhadap outlier dan kebutuhan untuk menentukan jumlah kluster sebelumnya \cite{ClusteringMethod}.
+
+\subsubsection{Hierarchical Clustering}
+Hierarchical clustering membentuk hirarki kluster dengan membangun pohon (dendrogram) yang mengilustrasikan tingkat kemiripan antar data. Terdapat dua pendekatan utama: agglomerative (pendekatan bottom-up) dan divisive (pendekatan top-down) \cite{JohnshonHierarchialCluster}. Dalam pendekatan agglomerative, setiap data dimulai sebagai kluster tunggal, kemudian secara bertahap digabungkan berdasarkan kemiripan, sedangkan dalam pendekatan divisive, kluster besar dipecah menjadi kluster yang lebih kecil. Keuntungan utama dari hierarchical clustering adalah fleksibilitas dalam menentukan struktur kluster, namun memiliki keterbatasan dalam hal efisiensi pada dataset besar \cite{HierarchialClusterSurvey}.
+
+\subsubsection{DBSCAN (Density-Based Spatial Clustering)}
+DBSCAN adalah algoritma clustering yang mengelompokkan data berdasarkan kepadatan. Algoritma ini efektif dalam mengidentifikasi kluster dengan bentuk arbitrer dan dapat mendeteksi outlier (data yang tidak termasuk dalam kluster mana pun). DBSCAN menggunakan dua parameter, yaitu radius pencarian (\textit{eps}) dan jumlah titik minimum dalam radius tersebut (\textit{MinPts}) untuk membentuk kluster. Algoritma ini sangat berguna dalam aplikasi yang melibatkan data spasial dan tidak memerlukan penentuan jumlah kluster sebelumnya, namun performanya sensitif terhadap parameter \cite{DbScanClustering}.
+
+\subsection{Evaluasi Jarak dalam Clustering}
+Pemilihan metrik jarak dan ukuran kemiripan sangat berpengaruh pada hasil clustering, terutama pada algoritma yang berbasis jarak seperti K-Means. Berbagai metrik jarak dapat digunakan tergantung pada karakteristik data dan tujuan analisis.
+
+\subsubsection{Euclidean Distance}
+Euclidean Distance merupakan salah satu metrik jarak paling umum yang digunakan dalam clustering, terutama untuk data numerik. Jarak Euclidean antara dua titik dalam ruang n-dimensi ($x_i$ dan $x_j$) dihitung dengan rumus:
 \[
 d(x_i, x_j) = \sqrt{\sum_{k=1}^{n} (x_{ik} - x_{jk})^2}
 \]
-di mana $x_{ik}$ dan $x_{jk}$ adalah nilai pada dimensi k untuk masing-masing data $x_i$ dan $x_j$
- 
-\subsection{K-Means Clustering}
-K-Means adalah algoritma clustering yang paling populer dan digunakan secara luas. Algoritma ini membagi data ke dalam k kelompok berdasarkan jarak dari titik pusat (centroid). Proses ini berulang kali dilakukan hingga posisi centroid tidak berubah signifikan atau hingga iterasi maksimum tercapai. Kelebihan K-Means adalah kesederhanaannya dan efisiensi komputasinya, terutama untuk dataset berukuran besar \cite{KMeansDef}. 
+Metode ini cocok untuk data dengan fitur berskala serupa, tetapi dapat memberikan hasil yang bias jika data memiliki perbedaan skala antar fitur yang signifikan \cite{JainEuclideanDistance}.
 
-Proses ini diulang hingga tidak ada perubahan signifikan pada posisi centroid atau hingga iterasi maksimum tercapai. Proses iterasi ini mengoptimalkan fungsi total sum of squared distances antara data dan centroid-nya:
+\subsubsection{Manhattan Distance}
+Manhattan Distance, juga dikenal sebagai L1 norm atau jarak taksi, menghitung jarak antara dua titik sebagai jumlah dari selisih absolut di setiap dimensi:
 \[
-J = \sum_{i=1}^k \sum_{x\in C_i} |x - \mu_i|^2
+d(x_i, x_j) = \sum_{k=1}^{n} |x_{ik} - x_{jk}|
 \]
-Dimana $C_i$ adalah kluster ke-i dan $\mu_i$ adalah centroid dari cluster tersebut.
+Manhattan Distance sering digunakan ketika data memiliki dimensi yang lebih tinggi atau untuk clustering di ruang non-Euclidean \cite{AggarwalManhattanDistance}.
+
+\subsubsection{Cosine Similarity}
+Cosine Similarity mengukur kemiripan antara dua vektor berdasarkan sudut kosinus di antara mereka. Ini umumnya digunakan pada data berdimensi tinggi, seperti teks atau data spasial, di mana orientasi lebih penting daripada magnitude.
+\[
+\text{Cosine Similarity} = \frac{x_i \cdot x_j}{||x_i|| \times ||x_j||}
+\]
+Nilai yang mendekati 1 menunjukkan kemiripan yang tinggi, sementara nilai yang mendekati 0 menunjukkan kemiripan rendah. Cosine Similarity populer dalam text mining dan clustering dokumen karena mengabaikan panjang absolut vektor \cite{HuangCosineRadius}.
 
 \subsection{Elbow Method}
-Pemilihan jumlah cluster \textit{k} yang optimal dalam K-Means adalah masalah yang penting. Metode Elbow adalah salah satu pendekatan yang sering digunakan untuk menentukan jumlah cluster optimal \cite{ElbowMethod}. Dalam metode ini, grafik Within-Cluster Sum of Squares (WCSS) diplot untuk beberapa nilai 
-k, dan jumlah cluster optimal adalah titik di mana WCSS mulai mengalami penurunan yang tidak signifikan, membentuk "titik siku" (elbow):
-\[
-\text{WCSS} = \sum_{i=1}^k \sum_{x\in C_i} |x - \mu_i|^2
-\]
+Pemilihan jumlah cluster $k$ yang optimal dalam K-Means adalah masalah yang penting. Salah satu pendekatan populer untuk menentukan jumlah cluster optimal adalah Metode Elbow \cite{ElbowMethod}. Dalam metode ini, grafik \textit{Within-Cluster Sum of Squares} (WCSS) diplot untuk beberapa nilai $k$, di mana WCSS adalah jumlah dari jarak kuadrat antara titik data dan centroid klusternya masing-masing. Nilai WCSS akan menurun seiring dengan bertambahnya jumlah cluster karena tiap cluster menjadi lebih kecil, tetapi pada titik tertentu, penurunan WCSS menjadi tidak signifikan. Jumlah cluster optimal adalah titik di mana WCSS mulai mengalami penurunan yang tidak signifikan, membentuk “titik siku” atau "elbow". Titik ini mengindikasikan jumlah cluster yang efisien untuk meminimalkan jarak intra-kluster sambil menghindari kompleksitas yang tidak perlu dalam pemodelan \cite{KodinariyaElbowMethod}.
 
-Metode lain seperti Silhouette Score mengukur seberapa baik data dikelompokkan dengan membandingkan jarak intra-cluster (di dalam cluster) dan inter-cluster (antara cluster). Nilai positif mendekati 1 menunjukkan clustering yang baik.
+Formula untuk WCSS dalam K-Means adalah:
+\[
+\text{WCSS} = \sum_{i=1}^k \sum_{x \in C_i} |x - \mu_i|^2
+\]
+di mana $C_i$ adalah cluster ke-$i$, $x$ adalah data dalam cluster tersebut, dan $\mu_i$ adalah centroid dari cluster $C_i$. Dengan memplot nilai WCSS untuk berbagai nilai $k$, titik di mana terjadi perubahan drastis menuju penurunan yang lebih kecil dapat dilihat sebagai jumlah cluster optimal. Metode ini efektif tetapi subjektif, karena interpretasi "titik siku" tidak selalu jelas untuk semua dataset.
+
+\subsection{Silhouette Score}
+Silhouette Score adalah metrik lain yang sering digunakan untuk mengevaluasi kualitas clustering dan menentukan jumlah cluster yang optimal tanpa bergantung pada grafik visual \cite{Januzaj_Beqiri_Luma_2023}. Silhouette Score mengukur seberapa mirip sebuah titik data dengan cluster lainnya dibandingkan dengan cluster tempatnya berada saat ini. Metrik ini berkisar dari -1 hingga 1, di mana nilai mendekati 1 menunjukkan bahwa data berada jauh dari cluster yang berdekatan, sedangkan nilai mendekati 0 menunjukkan bahwa data berada di antara dua cluster. Nilai negatif menunjukkan bahwa data tersebut lebih dekat ke cluster tetangga dibandingkan dengan cluster tempatnya berada sekarang, yang menunjukkan pengelompokan yang tidak optimal.
+
+Silhouette Score $s(i)$ untuk data $i$ dapat dihitung dengan rumus:
+\[
+s(i) = \frac{b(i) - a(i)}{\max(a(i), b(i))}
+\]
+di mana:
+- $a(i)$ adalah jarak rata-rata antara data $i$ dan semua data lain dalam cluster yang sama.
+- $b(i)$ adalah jarak rata-rata antara data $i$ dan semua data dalam cluster terdekat yang bukan miliknya.
+
+Nilai Silhouette Score rata-rata dari semua data dalam dataset memberikan ukuran keseluruhan dari kualitas clustering. Silhouette Score yang tinggi menunjukkan bahwa kluster bersifat kompak dan data antar kluster berbeda secara signifikan, sehingga metode ini memberikan indikator yang lebih kuantitatif untuk menentukan jumlah cluster yang optimal \cite{SilhoetterScore}. Penggunaan Silhouette Score sangat berguna untuk dataset kompleks di mana metode Elbow mungkin sulit diinterpretasi.
 
 \subsection{Data Normalization}
-Sebelum melakukan clustering, terutama untuk algoritma seperti K-Means, normalisasi data seringkali diperlukan. Algoritma K-Means sensitif terhadap skala antar fitur, sehingga fitur dengan rentang nilai yang lebih besar dapat mendominasi hasil clustering \cite{ComparationMinMaxZScore}. Salah satu metode normalisasi yang sering digunakan adalah Min-Max Scaling:
+Sebelum melakukan clustering, terutama untuk algoritma seperti K-Means, normalisasi data seringkali diperlukan untuk memastikan bahwa setiap fitur memiliki kontribusi yang seimbang dalam proses clustering. Algoritma K-Means sensitif terhadap skala antar fitur, sehingga fitur dengan rentang nilai yang lebih besar dapat mendominasi hasil clustering \cite{ComparationMinMaxZScore}. Dengan melakukan normalisasi, kita dapat menyamakan skala semua fitur sehingga algoritma dapat mengelompokkan data secara lebih akurat.
+
+Beberapa metode normalisasi yang sering digunakan antara lain adalah:
+
+\subsubsection{Min-Max Scaling}
+Min-Max Scaling mengubah data ke rentang skala tertentu, biasanya antara 0 dan 1. Formula Min-Max Scaling adalah:
 \[
 X_{\text{scaled}} = \frac{X - X_{\text{min}}}{X_{\text{max}} - X_{\text{min}}}
 \]
-Metode lain adalah Z-Score Normalization yang menstandarkan data berdasarkan mean dan standar deviasi:
+di mana $X$ adalah nilai asli, $X_{\text{min}}$ dan $X_{\text{max}}$ adalah nilai minimum dan maksimum dari fitur tersebut. Metode ini sangat efektif untuk data yang tidak memiliki outlier ekstrem, namun sensitif terhadap perubahan rentang data \cite{HanMinMaxScaling}.
+
+\subsubsection{Z-Score Normalization}
+Z-Score Normalization atau Standarisasi mengonversi data berdasarkan mean ($\mu$) dan standar deviasi ($\omega$) dari data, menghasilkan distribusi dengan rata-rata 0 dan standar deviasi 1. Formula Z-Score Normalization adalah:
 \[
 Z = \frac{X - \mu}{\omega}
 \]
+Metode ini bermanfaat ketika data memiliki outlier atau perbedaan rentang nilai antar fitur yang besar. Standarisasi menjadikan semua fitur memiliki variabilitas yang setara sehingga algoritma clustering dapat lebih sensitif terhadap pola dalam data tanpa bias skala \cite{GarcíaZ_Score}.
 
 \subsection{Principal Component Analysis (PCA)}
-Pada dataset dengan dimensi yang tinggi, visualisasi dapat menjadi sulit. Oleh karena itu, teknik reduksi dimensi seperti Principal Component Analysis (PCA) sering digunakan. PCA mengubah dataset ke dalam sejumlah komponen utama yang mempertahankan variasi data. Ini memungkinkan kita untuk memvisualisasikan data dalam 2D atau 3D sambil tetap mempertahankan informasi penting dari dimensi yang lebih tinggi \cite{PCAComponent}.
+Pada dataset berdimensi tinggi, analisis dan visualisasi dapat menjadi sulit dan tidak efisien. Oleh karena itu, teknik reduksi dimensi seperti Principal Component Analysis (PCA) sering digunakan untuk menyederhanakan data tanpa menghilangkan informasi yang signifikan. PCA mengurangi jumlah dimensi dengan memproyeksikan data ke dalam sejumlah komponen utama yang menangkap sebagian besar varians dalam data asli \cite{PCAComponent}.
+
+\subsubsection{Proses PCA}
+PCA bekerja dengan mencari kombinasi linier dari fitur asli yang memaksimalkan varians data. Proses PCA melibatkan perhitungan matriks kovarians dari data, ekstraksi nilai eigen (eigenvalues) dan vektor eigen (eigenvectors), dan transformasi data berdasarkan komponen utama yang dihasilkan. Komponen pertama (PC1) menjelaskan variansi terbesar, dan komponen berikutnya (PC2, PC3, dst.) mengurangi dimensi lebih lanjut sambil menjaga sebanyak mungkin informasi \cite{PCAComponent}.
+
+\subsubsection{Visualisasi dan Aplikasi PCA}
+Dengan mereduksi dimensi, PCA memungkinkan kita untuk memvisualisasikan dataset dalam ruang 2D atau 3D, yang berguna untuk interpretasi visual dalam clustering. Selain itu, PCA dapat membantu mengatasi masalah multikolinearitas dalam data yang memiliki fitur yang sangat berkorelasi. Dalam konteks clustering, PCA sering digunakan sebagai pra-pemrosesan untuk mengurangi kompleksitas data sebelum menjalankan algoritma clustering seperti K-Means, sehingga meningkatkan efisiensi dan akurasi \cite{AbdiPCAVisualization}.
 
 \newpage
 

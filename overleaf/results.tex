@@ -28,7 +28,7 @@ Tahap \textit{Preprocessing} merupakan tahapan dimana data yang telah diambil se
 \subsection{Model Building}
 Akan dibuat model clustering dan proses visualisasi dari 4 atribut ini dari berbagai macam sudut pandang, namun hal peratama yang perlu dilakukan adalah menentukan jumlah \textit{cluster} yang sesuai untuk dataset kali ini.
 
-\begin{lstlisting}[language=Python, caption=Python Code for Elbow Methods,label={lst:elbow_method}]
+\begin{lstlisting}[language=Python, caption=Program kode untuk menentukan Silhouette Score,label={lst:silhouette_method}]
 ## Install the Necessary Package
 import numpy as np
 import pandas as pd
@@ -69,8 +69,8 @@ plt.show()
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.5\linewidth]{images/optimal_cluster.png}
-    \caption{Hasil Elbow Method}
-    \label{fig:elbow_method}
+    \caption{Hasil Silhouette Score}
+    \label{fig:silhouette_score}
 \end{figure}
 
 Berdasarkan hasil tersebut didapatkan bahwa nilai kluster yang optimal adalah 3, dimana dapat dilihat dari nilai \textit{Silhuoette Score}, Cluster 3 mempunyai nilai paling maximum. Nilai \textit{Silhouette Score} menjelaskan kemiripan dari suatu object di dalam suatu \textit{cluster} dengan \textit{cluster} lain. Nilai tinggi (mendekati 1) mengindikasikan \textit{cluster} yang lebih baik, sementara nilai rendah (mendekati 0) mengindikasikan adanya \textit{cluster} yang saling tumpang tindih (\textit{overlap}). Nilai 0.56 menunjukan cluster yang cukup baik, namun terdapat beberapa \textit{overlap} antar klaster.
