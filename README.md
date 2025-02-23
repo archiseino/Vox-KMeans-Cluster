@@ -6,3 +6,5 @@ This analysis using K-Means clustering on the combine dataset of the data rekapi
 Result: It was not was I expecting, since the nature of the data is have low standar variation, the data is groupped in one cluster and it's hard to visualize the data.
 
 I wonder if I've another importatnt dataset such as age distribution, income, and education rate. Probably the result will be different
+
+That's the neat part, you don't
